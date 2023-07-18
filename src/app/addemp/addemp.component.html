@@ -1,0 +1,73 @@
+<h2 class="text-center">Add New Employee</h2>
+<form action="" class="container" [formGroup]="addForm">
+    <div>
+        <label for="id"><b> EMPLOYEE ID</b></label>
+        <input id="id" formControlName="eid" name="eid" class="form-control" type="text" placeholder="Enter Employee Id">
+    </div>
+    <div *ngIf="(this.addForm.get('eid')?.errors)&&(this.addForm.get('eid')?.touched)">
+        <p class="text-danger">Must contains alphabets only</p>
+    </div><br>
+<div>
+    <label for="name"><b>NAME</b></label>
+    <input id="name" formControlName="ename" name="ename" class="form-control" type="text" placeholder="Enter Name">
+</div>
+<div *ngIf="(this.addForm.get('ename')?.errors)&&(this.addForm.get('ename')?.touched)">
+    <p class="text-danger">Must contains alphabets only</p>
+</div><br>
+<div>
+    <label for="pos"><b>POSITION</b></label>
+    <input id="pos" formControlName="eposition" name="position" class="form-control" type="text" placeholder="Enter Position">
+</div>
+<div *ngIf="(this.addForm.get('eposition')?.errors)&&(this.addForm.get('eposiyion')?.touched)">
+    <p class="text-danger">Must contains alphabets only</p>
+</div><br>
+<div>
+    <label for="d1"><b>DEPARTMENT</b></label>
+    <input id="d1" formControlName="edept" name="d2" class="form-control" type="text" placeholder="Enter Department">
+</div>
+<div *ngIf="(this.addForm.get('edept')?.errors)&&(this.addForm.get('edept')?.touched)">
+    <p class="text-danger">Must contains alphabets only</p>
+</div><br>
+<div>
+    <label for="p1"><b>PHONE NUMBER</b></label>
+    <input id="p1" formControlName="ephone" name="p2" class="form-control" type="text" placeholder="Enter Phone Number">
+</div>
+<div *ngIf="(this.addForm.get('ephone')?.errors)&&(this.addForm.get('ephone')?.touched)">
+    <p class="text-danger">Must contains alphabets only</p>
+</div>
+<br>
+<div>
+    <label for="s1"><b>SALARY PER MONTH</b></label>
+    <input id="s1" formControlName="esal" name="s2" class="form-control" type="number" placeholder="Enter Salary per month">
+</div>
+<div *ngIf="(this.addForm.get('esal')?.errors)&&(this.addForm.get('esal')?.touched)">
+    <p class="text-danger">Must contains alphabets only</p>
+</div>
+<br>
+<div>
+    <label for="j1"><b>JOINING DATE</b></label>
+    <input id="j1" formControlName="ejoining" name="j2" class="form-control" type="date" placeholder="Enter Joining Date">
+</div>
+<div *ngIf="(this.addForm.get('ejoining')?.errors)&&(this.addForm.get('ejoining')?.touched)">
+    <p class="text-danger">Must contains alphabets only</p>
+</div>
+<br>
+<div>
+    <label for="st1"><b>STAFF OR NOT</b></label>
+    <input id="st1" formControlName="estaff" name="st2" class="form-control" type="text" placeholder="Staff or not">
+</div>
+<div *ngIf="(this.addForm.get('esaff')?.errors)&&(this.addForm.get('estaff')?.touched)">
+    <p class="text-danger">Must contains alphabets only</p>
+</div>
+<br>
+<div>
+    <label for="ld1"><b>LEAVING DATE</b></label>
+    <input id="ld1" formControlName="eleave" name="d2" class="form-control" type="date" placeholder="Enter Leaving Date">
+</div>
+<div *ngIf="(this.addForm.get('eleave')?.errors)&&(this.addForm.get('eleave')?.touched)">
+    <p class="text-danger">Must contains alphabets only</p>
+</div>
+<br>
+<button (click)="add()" type="submit" class="btn btn-success" style="position: relative;left: 500px;">ADD</button>
+<button type="button" class="btn btn-outline-danger" style="position: relative;left: 800px;" onclick="history.back()">BACK</button>
+</form>
