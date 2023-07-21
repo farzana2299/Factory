@@ -1,0 +1,18 @@
+pipe
+-----
+transform . 3 argument arg1,arg2,arg3
+* arg1= emparray il ninnan data varunnath so first argument emparay
+* arg2-[search data used to transform array]emparray il oru data vach aan check cheyyenedath. 
+    here staff il yes aanankil current employees and staff no aanakil resigned emp aan.
+    (eth data vachaan transform cheyyendath)
+* arg3-[data in input array to match]ippo input arrayum search cheyyendathum ind.
+    arg3 evidapoyi search cheyyanam enn nokkaan.Here estaff
+
+api
+-----
+HttpClientModule-module
+HttpClient-class
+methods-get put post patch delete
+
+14/6/2023
+---------

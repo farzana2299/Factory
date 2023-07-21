@@ -1,42 +1,45 @@
-<h2 class="text-center">Edit Employee</h2>
+<div class="ms-5 me-5 " style="background-color: darkgrey;">
+<h2 class="text-center text-primary" style="font-size: 45px;">Edit Employee</h2>
 <form action="" (ngSubmit)="edit()" class="container" >
     <div>
-        <label for="id"><b> EMPLOYEE ID</b></label>
-        <input [(ngModel)]="pdata.eid" id="id" name="eid" class="form-control" type="text" placeholder="Enter Employee Id">
+        <label style="color: yellow;" for="id"><b> EMPLOYEE ID</b></label>
+        <input [(ngModel)]="edata.eid" id="id" name="eid" class="form-control" type="text" placeholder="Enter Employee Id">
     </div><br>
 <div>
-    <label for="name"><b>NAME</b></label>
-    <input [(ngModel)]="pdata.ename" id="name" name="ename" class="form-control" type="text" placeholder="Enter Name">
+    <label style="color: yellow;" for="name"><b>NAME</b></label>
+    <input [(ngModel)]="edata.ename" id="name" name="ename" class="form-control" type="text" placeholder="Enter Name">
 </div><br>
 <div>
-    <label for="pos"><b>POSITION</b></label>
-    <input [(ngModel)]="pdata.eposition" id="pos" name="position" class="form-control" type="text" placeholder="Enter Position">
+    <label style="color: yellow;" for="pos"><b>POSITION</b></label>
+    <input [(ngModel)]="edata.eposition" id="pos" name="position" class="form-control" type="text" placeholder="Enter Position">
 </div><br>
 <div>
-    <label for="d1"><b>DEPARTMENT</b></label>
-    <input [(ngModel)]="pdata.edept" id="d1" name="d2" class="form-control" type="text" placeholder="Enter Department">
+    <label style="color: yellow;" for="d1"><b>DEPARTMENT</b></label>
+    <input [(ngModel)]="edata.edept" id="d1" name="d2" class="form-control" type="text" placeholder="Enter Department">
 </div><br>
 <div>
-    <label for="p1"><b>PHONE NUMBER</b></label>
-    <input [(ngModel)]="pdata.ephone" id="p1" name="p2" class="form-control" type="text" placeholder="Enter Phone Number">
+    <label style="color: yellow;" for="p1"><b>PHONE NUMBER</b></label>
+    <input [(ngModel)]="edata.ephone" id="p1" name="p2" class="form-control" type="text" placeholder="Enter Phone Number">
 </div><br>
 <div>
-    <label for="s1"><b>SALARY PER MONTH</b></label>
-    <input [(ngModel)]="pdata.esal" id="s1" name="s2" class="form-control" type="number" placeholder="Enter Salary per month">
+    <label style="color: yellow;" for="s1"><b>SALARY PER MONTH</b></label>
+    <input [(ngModel)]="edata.esal" id="s1" name="s2" class="form-control" type="number" placeholder="Enter Salary per month">
 </div><br>
 <div>
-    <label for="j1"><b>JOINING DATE</b></label>
-    <input [(ngModel)]="pdata.ejoining" id="j1" name="j2" class="form-control" type="date" placeholder="Enter Joining Date">
+    <label style="color: yellow;" for="j1"><b>JOINING DATE</b></label>
+    <input [(ngModel)]="edata.ejoining" id="j1" name="j2" class="form-control" type="date" placeholder="Enter Joining Date">
 </div><br>
 <div>
-    <label for="st1"><b>STAFF OR NOT</b></label>
-    <input [(ngModel)]="pdata.estaff" id="st1" name="st2" class="form-control" type="text" placeholder="Staff or not">
+    <label style="color: yellow;" for="st1"><b>STAFF OR NOT</b></label>
+    <input [(ngModel)]="edata.estaff" id="st1" name="st2" class="form-control" type="text" placeholder="Staff or not">
 </div><br>
 <div>
-    <label for="ld1"><b>LEAVING DATE</b></label>
-    <input [(ngModel)]="pdata.eleave" id="ld1" name="d2" class="form-control" type="date" placeholder="Enter Leaving Date">
+    <label style="color: yellow;" for="ld1"><b>LEAVING DATE</b></label>
+    <input [(ngModel)]="edata.eleave" id="ld1" name="d2" class="form-control" type="date" placeholder="Enter Leaving Date">
 </div><br>
 <button type="submit" class="btn btn-success" style="position: relative;left: 500px;">SAVE</button>
-<button type="button" class="btn btn-outline-danger" style="position: relative;left: 800px;" onclick="history.back()">BACK</button>
+<div class="text-container mb-2">
+    <a href="employee" style="position: relative;left: 950px; top: -50px;" type="button" class="btn btn-danger mt-3 ms-3 mb-3">Close</a>
+</div>
 </form>
-
+</div>

@@ -11,7 +11,12 @@ export class HomeComponent {
   {}
 ngOnInit():void
 {
-
+//when logout user try to get using backbutton 
+if(!localStorage.getItem('currentUser'))
+{
+  alert('please login')
+  this.router.navigateByUrl("")
+}
 }
 logout()
   {

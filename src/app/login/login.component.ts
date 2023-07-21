@@ -10,36 +10,31 @@ import { DataService } from '../data.service';
 })
 export class LoginComponent {
   uname: any;
-  psw:any
-constructor(private router:Router,private fb:FormBuilder,private ds:DataService)
-{}
-ngOnInit():void
-{}
-loginForm=this.fb.group({
-  uname:['',[Validators.required,Validators.pattern('[a-zA-Z]+')]],
-  psw:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]+')]]
-})
-login()
-{
-  var uname=this.uname
-  var psw=this.psw
-  if(this.loginForm.valid)
-  {
-    this.ds.login(uname,psw).subscribe((result:any)=>{
+  psw: any
+  constructor(private router: Router, private fb: FormBuilder, private ds: DataService) { }
+  ngOnInit(): void { }
+  loginForm = this.fb.group({
+    uname: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
+    psw: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]]
+  })
+  login() {
+    if (this.loginForm.valid) {
+      var uname = this.uname
+      var psw = this.psw
+      this.ds.login(uname, psw).subscribe((result: any) => {
 
-      localStorage.setItem('currentUser',result.currentUser)
-      
-      alert(result.message)
-      this.router.navigateByUrl('home')
-    },
-    result=>{
-      alert(result.error.message)
+        localStorage.setItem('currentUser', result.currentUser)
+        alert(result.message)
+        this.router.navigateByUrl('home')
+      },
+        result => {
+          alert(result.error.message)
+        }
+      )
     }
-    )
+    else {
+      alert("Invalid Form")
+    }
+
   }
-  else{
-    alert("Invalid Form")
-  }
- 
-}
 }

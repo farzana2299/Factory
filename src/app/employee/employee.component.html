@@ -1,18 +1,17 @@
-<h2 class="text-center w-75"><b>EMPLOYEE MANAGEMENT</b></h2>
-<button style="position: relative;left: 850px;" class="btn btn-success" (click)="addEmp()">ADD</button>
+<div style="background-color: lightgray; height: 1000px;">
+<h2 class="text-center w-100" style="color: brown;font-size: 50px;"><b>EMPLOYEE MANAGEMENT</b></h2>
+<button style="position: relative;left: 850px;" class="btn btn-success btn-lg" (click)="addEmp()">ADD</button>
 <!-- //search  -->
-<div style=" position: relative; left: 900px;top: -35px;">
-    <input [(ngModel)]="searchTerm" (keyup)="search($event)" id="s1" name="search" type="text" style=" border-radius: 8px;height: 35px;" class="ms-5" placeholder="Search">
-    <button style="border-radius: 8px;height: 35px;"><i class="fa-solid fa-magnifying-glass"></i></button>    
+<div style=" position: relative; left: 900px;top: -50px;">
+    <input [(ngModel)]="searchTerm" (keyup)="search($event)" id="s1" name="search" type="text" style=" border-radius: 8px;height: 50px;" class="ms-5" placeholder="Search">
+    <button style="border-radius: 8px;height: 50px;"><i class="fa-solid fa-magnifying-glass"></i></button>    
+</div>
+<div>
+<button (click)="filterPipe('')" class="btn btn-outline-warning btn-lg" style="position: relative;left: 400px; ">All</button>
+<button (click)="filterPipe('yes')" class="btn btn-outline-warning btn-lg" style="position: relative;left: 400px;">Current Staff</button>
+<button (click)="filterPipe('no')" class="btn btn-outline-warning btn-lg" style="position: relative;left: 400px;">Resigned Staff</button>
 </div>
 <hr>
-<!-- <P class="text-center w-75">{{date | date : 'fullDate'}}</P> -->
-<div>
-<button class="" (click)="">All</button>
-<button class="" (click)="">Debit</button>
-<button class="" (click)="">Credit</button>
-</div>
-
 <table class="table table-primary table-striped container">
     <thead>
       <tr>
@@ -29,7 +28,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let i of emparray  | search:searchString:'empName'">
+      <!-- <tr>
+        <td>1</td>
+        <td>qqqq</td>
+        <td>wwww</td>
+        <td>www</td>
+        <td>www</td>
+        <td>222</td>
+        <td>aaa</td>
+        <td>22</td>
+        <td>sss</td>
+      </tr> -->
+      <tr *ngFor="let i of emparray  | filter :searchString:'estaff'">
         <th scope="row">{{i.eid}}</th>
         <td>{{i.ename}}</td>
         <td>{{i.eposition}}</td>
@@ -49,3 +59,4 @@
     <a href="home" style="position: relative;left: 950px;" type="button" class="btn btn-danger mt-3 ms-3 mb-3">Close</a>
 </div>
 
+</div>

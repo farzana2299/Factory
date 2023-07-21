@@ -9,41 +9,49 @@ import { Router } from '@angular/router';
   styleUrls: ['./addemp.component.css']
 })
 export class AddempComponent {
-constructor(private fb:FormBuilder,private ds:DataService,private rt:Router)
-{}
-ngOnInit():void
-{
+  eid: any; ename: any; eposition: any; edept: any; ephone: any; esal: any; ejoining: any; estaff: any; eleave: any;
+  constructor(private fb: FormBuilder, private ds: DataService, private rt: Router) { }
+  ngOnInit(): void {
 
-}
-// model form for add 
-addForm=this.fb.group({
-  eid:['',[Validators.required,Validators.pattern('[a-zA-z0-9]+')]],
-  ename:['',[Validators.required,Validators.pattern('[a-zA-z]+')]],
-  eposition:['',[Validators.required,Validators.pattern('[a-zA-z]+')]],
-  edept:['',[Validators.required,Validators.pattern('[a-zA-z]+')]],
-  ephone:['',[Validators.required,Validators.pattern('[0-9]+')]],
-  esal:['',[Validators.required,Validators.pattern('[0-9]+')]],
-  ejoining:['',[Validators.required,Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]],
-  estaff:['',[Validators.pattern('[a-zA-z]+')]],
-  eleave:['',[Validators.required,Validators.pattern(/^\d{4}\-(0[1-9]|1[012])\-(0[1-9]|[12][0-9]|3[01])$/)]]
-})
-  add()
-  {
-    var path=this.addForm.value
-    var empData={
-      eid:path.eid,
-      ename:path.ename,
-      eposition:path.eposition,
-      edept:path.edept,
-      ephone:path.ephone,
-      esal:path.esal,
-      ejoining:path.ejoining,
-      estaff:path.estaff,
-      eleave:path.eleave
+  }
+  // model form for add 
+  addForm = this.fb.group({
+    eid: ['', [Validators.required, Validators.pattern('[a-zA-z0-9]+')]],
+    ename: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],
+    eposition: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],
+    edept: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],
+    ephone: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    esal: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    ejoining: ['', [Validators.required]],
+    estaff: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],
+    eleave: ['',]
+  })
+  add() {
+    var eid = this.addForm.value.eid
+    var ename = this.addForm.value.ename
+    var eposition = this.addForm.value.eposition
+    var edept = this.addForm.value.edept
+    var ephone = this.addForm.value.ephone
+    var esal = this.addForm.value.esal
+    var ejoining = this.addForm.value.ejoining
+    var estaff = this.addForm.value.estaff
+    var eleave = this.addForm.value.eleave
+    if(this.addForm.valid)
+    {
+      this.ds.addEmployee(eid,ename,eposition,edept,ephone,esal,ejoining,estaff,eleave).subscribe((result: any) => {
+        alert(result.message)
+        this.rt.navigateByUrl("employee")
+      },
+      result=>{
+        alert(result.error.message)
+        
+      }
+      )
     }
-    this.ds.addEmployee(empData).subscribe((result:any)=>{
-      alert('New Employee Added')
-      this.rt.navigateByUrl("employee")
-    })
+    else{
+    
+        alert("Please Check again")
+    }
+    
   }
 }

@@ -4,16 +4,17 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-  transform(emparray:any[],searchTerm:string,searchKey:string):any[] {
+
+  transform(proarray:any[],searchTerm:string,searchKey:string):any[] {
     //variable to store the data
     const result:any=[]
-    if(!emparray || !searchTerm || !searchKey)
+    if(!proarray || !searchTerm || !searchKey)
     {
-      return emparray
+      return proarray
     }
     else
     {
-      emparray.forEach(item=>{
+      proarray.forEach(item=>{
         if(item[searchKey].includes(searchTerm))
         {
           result.push(item)
@@ -23,5 +24,4 @@ export class FilterPipe implements PipeTransform {
     }
   }
 
- 
 }

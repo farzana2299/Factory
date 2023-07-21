@@ -1,1 +1,35 @@
-<p>editraw works!</p>
+<div  class="ms-5 me-5 " style="background-color: darkgrey;">
+<h2 class="text-center text-primary" style="font-size: 45px;">Edit Raw-Material</h2>
+<form action="" (ngSubmit)="edit()" class="container" >
+    <div>
+        <label style="color: yellow;" for="pid"><b>ID</b></label>
+        <input [(ngModel)]="rdata.pid" id="pid" name="id" class="form-control" type="text" placeholder="Enter  Id">
+    </div><br>
+<div>
+    <label style="color: yellow;" for="pname"><b>NAME</b></label>
+    <input [(ngModel)]="rdata.pname" id="pname" name="name" class="form-control" type="text" placeholder="Enter  Name">
+</div><br>
+<div>
+    <label style="color: yellow;" for="qty"><b>QUANTITY</b></label>
+    <input [(ngModel)]="rdata.quantity" id="qty" name="quantity" class="form-control" type="text" placeholder="Enter Quantity">
+</div><br>
+<div>
+    <label style="color: yellow;" for="d1"><b>PLACE</b></label>
+    <input [(ngModel)]="rdata.pdate" id="d1" name="d2" class="form-control" type="text" placeholder="Enter the place where product exports">
+</div><br>
+<div>
+    <label style="color: yellow;" for="e1"><b>DATE</b></label>
+    <input [(ngModel)]="rdata.export" id="e1" name="e2" class="form-control" type="date" placeholder="Enter Date">
+</div><br>
+<div>
+    <label style="color: yellow;" for="e1"><b>USAGE</b></label>
+    <input [(ngModel)]="rdata.pplace" id="e1" name="e2" class="form-control" type="text" placeholder="Yes/No">
+</div><br>
+<button type="submit" class="btn btn-success" style="position: relative;left: 500px;">SAVE</button>
+<div class="text-container mb-2">
+    <a href="rawmaterial" style="position: relative;left: 950px; top: -50px;" type="button" class="btn btn-danger mt-3 ms-3 mb-3">Close</a>
+</div>
+</form>
+
+</div>
+

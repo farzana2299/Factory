@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent {
-  searchString:any=[]
+  searchString=""
   emparray:any
   eid:any
   date:any;
@@ -18,7 +18,7 @@ constructor(private ds:DataService,private router:Router)
 {}
 ngOnInit():void
 {
-  this.ds.getEmployee(this.eid).subscribe((result:any)=>{
+  this.ds.getEmployee().subscribe((result:any)=>{
     this.emparray=result.message
   })
 }
@@ -43,6 +43,9 @@ search(event:any)
   //seand data to behaviour subject
   this.ds.search.next(this.searchTerm)
 }
- 
+ filterPipe(data:any)
+ {
+  this.searchString=data
+ }
 }
 

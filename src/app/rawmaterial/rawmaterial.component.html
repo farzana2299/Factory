@@ -1,1 +1,45 @@
-<p>rawmaterial works!</p>
+<div style="background-color: lightgray; height: 1000px;">
+    <h2 class="text-center w-100" style="color: brown;font-size: 50px;"><b>RAW-MATERIAL MANAGEMENT</b></h2>
+    <button style="position: relative;left: 850px;" class="btn btn-success btn-lg" (click)="addRaw()">ADD</button>
+    <!-- //search  -->
+    <div style=" position: relative; left: 900px;top: -50px;">
+        <input [(ngModel)]="searchTerm" (keyup)="search($event)" id="s1" name="search" type="text" style=" border-radius: 8px;height: 50px;" class="ms-5" placeholder="Search">
+        <button style="border-radius: 8px;height: 50px;"><i class="fa-solid fa-magnifying-glass"></i></button>    
+    </div>
+    <div>
+    <button (click)="filterPipe('')" class="btn btn-warning btn-lg" style="position: relative;left: 400px; ">All</button>
+    <button (click)="filterPipe('yes')" class="btn btn-warning btn-lg" style="position: relative;left: 400px;">Completed</button>
+    <button (click)="filterPipe('no')" class="btn btn-warning btn-lg" style="position: relative;left: 400px;">Not Completed</button>
+    </div>
+    <hr>
+    <table class="table table-primary table-striped container">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NAME</th>
+            <th scope="col">QUANTITY</th>
+            <th scope="col">FROM</th>
+            <th scope="col">FROM DATE</th>
+            <th scope="col">USAGE</th>
+            <th scope="col">button</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of rawarray  | filter :searchString:'usage'">
+            <th scope="row">{{i.rid}}</th>
+            <td>{{i.rname}}</td>
+            <td>{{i.rqty}}</td>
+            <td>{{i.rfrom}}</td>
+            <td>{{i.rdate}}</td>
+            <td>{{i.usage}}</td>
+            <td><button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="editRaw()">Edit</button>
+                <button type="button" class="btn btn-sm btn-outline-danger" (click)="deleteRaw()">Delete</button>
+            </td>
+          </tr>   
+        </tbody>
+      </table>
+      <div class="text-container mb-2">
+        <a href="home" style="position: relative;left: 950px;" type="button" class="btn btn-danger mt-3 ms-3 mb-3">Close</a>
+    </div>
+    
+    </div>

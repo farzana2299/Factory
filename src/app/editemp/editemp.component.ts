@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditempComponent {
   eid:any
-  pdata:any={}
+  edata:any={}
   constructor(private ds:DataService,private ar:ActivatedRoute,private rt:Router)
   {
   }
@@ -19,15 +19,15 @@ export class EditempComponent {
       console.log(this.eid);
       
     })
-    this.ds.getEmployee(this.eid).subscribe((result:any)=>{
-      this.pdata=result
-      console.log(this.pdata);
+    this.ds.getEmployee().subscribe((result:any)=>{
+      this.edata=result
+      console.log(this.edata);
       
     })
   }
 edit()
 {
-  this.ds.updateEmp(this.eid,this.pdata).subscribe((result:any)=>{
+  this.ds.updateEmp(this.eid,this.edata).subscribe((result:any)=>{
     alert('Employee Data Updated')
     this.rt.navigateByUrl('employee')
   })
