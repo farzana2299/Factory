@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddrawComponent } from './addraw.component';
+import { AddRawComponent } from './add-raw.component';
 
-describe('AddrawComponent', () => {
-  let component: AddrawComponent;
-  let fixture: ComponentFixture<AddrawComponent>;
+describe('AddRawComponent', () => {
+  let component: AddRawComponent;
+  let fixture: ComponentFixture<AddRawComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AddrawComponent]
+      declarations: [AddRawComponent]
     });
-    fixture = TestBed.createComponent(AddrawComponent);
+    fixture = TestBed.createComponent(AddRawComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

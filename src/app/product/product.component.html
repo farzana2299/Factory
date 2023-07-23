@@ -8,8 +8,8 @@
     </div>
     <div>
     <button (click)="filterPipe('')" class="btn btn-warning btn-lg" style="position: relative;left: 400px; ">All</button>
-    <button (click)="filterPipe('yes')" class="btn btn-warning btn-lg" style="position: relative;left: 400px;">Current Staff</button>
-    <button (click)="filterPipe('no')" class="btn btn-warning btn-lg" style="position: relative;left: 400px;">Resigned Staff</button>
+    <button (click)="filterPipe('yes')" class="btn btn-warning btn-lg" style="position: relative;left: 400px;">Complete</button>
+    <button (click)="filterPipe('no')" class="btn btn-warning btn-lg" style="position: relative;left: 400px;">Not Complete</button>
     </div>
     <hr>
     <table class="table table-primary table-striped container">
@@ -25,7 +25,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let i of proarray  | filter :searchString:'export'">
+          <tr *ngFor="let i of proarray  | search :searchString:'pname'">
             <th scope="row">{{i.pid}}</th>
             <td>{{i.pname}}</td>
             <td>{{i.quantity}}</td>

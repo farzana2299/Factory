@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -32,7 +32,7 @@ export class DataService {
   //single employee data //api to get emp array
   getEmployee()
   {
-    return this.http.get('http://localhost:3000/employee/')
+    return this.http.get('http://localhost:3000/employee')
   }
   //update employee
   updateEmp(eid:any,empObject:any)
@@ -45,17 +45,17 @@ deleteEmployee(eid:any)
   return this.http.delete('http://localhost:3000/employee/'+eid)
 }
 //add product
-addProduct(pid:any,pname:any,pplace:any,quantity:any,pexport:any,pdate:any)
+addProduct(pid:any,pname:any,quantity:any,pdate:any,pexport:any,pplace:any)
   {
     const body={
-      pid,pname,pplace,quantity,pexport,pdate
+      pid,pname,quantity,pdate,pexport,pplace
     }
     return this.http.post('http://localhost:3000/addProduct',body)
   }
-//single product data
-getProduct(pid:any)
+// product data in table
+getProduct()
   {
-    return this.http.get('http://localhost:3000/product/'+pid)
+    return this.http.get('http://localhost:3000/product')
   }
   //update product
   updateProduct(pid:any,proObject:any)
@@ -76,9 +76,9 @@ addRaw(rid:any,rname:any,rqty:any,rfrom:any,rdate:any,usage:any)
     return this.http.post('http://localhost:3000/addRaw',body)
   }
   //single raw data
-getRaw(rid:any)
+getRaw()
 {
-  return this.http.get('http://localhost:3000/rawmaterial/'+rid)
+  return this.http.get('http://localhost:3000/rawmaterial')
 }
 //update raw
 updateRaw(rid:any,proObject:any)

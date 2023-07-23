@@ -5,15 +5,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(emparray:any[],searchString:string,propName:string):any {
+  transform(emparray:any[],searchString:string,ename:string):any {
     const result:any=[]
-    if(!emparray || searchString=="" || propName=="")
+    if(!emparray || searchString=="" || ename=="")
     {
       return emparray
     }
     else{
       emparray.forEach((item:any)=>{
-        if(item[propName].trim().toLowerCase().includes(searchString.trim().toLowerCase())){
+        if(item[ename].trim().toLowerCase().includes(searchString.trim().toLowerCase())){
           result.push(item)
         }
       })

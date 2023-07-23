@@ -18,14 +18,14 @@
             <th scope="col">ID</th>
             <th scope="col">NAME</th>
             <th scope="col">QUANTITY</th>
-            <th scope="col">FROM</th>
+            <th scope="col">FROM PLACE</th>
             <th scope="col">FROM DATE</th>
             <th scope="col">USAGE</th>
             <th scope="col">button</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let i of rawarray  | filter :searchString:'usage'">
+          <tr *ngFor="let i of rawarray  | search :searchString:'rname'">
             <th scope="row">{{i.rid}}</th>
             <td>{{i.rname}}</td>
             <td>{{i.rqty}}</td>

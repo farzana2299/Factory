@@ -18,7 +18,7 @@ export class EditrawComponent {
       
       
     })
-    this.ds.getRaw(this.rid).subscribe((result:any)=>{
+    this.ds.getRaw().subscribe((result:any)=>{
       this.rdata=result
       
       

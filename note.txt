@@ -14,5 +14,9 @@ HttpClientModule-module
 HttpClient-class
 methods-get put post patch delete
 
-14/6/2023
----------
+behaviour subject
+communicate between different module and also we can make data to a stream
+rxjs-module-reactive extension for javascript
+
+
+ngModel apply cheyyaan forms module venam.

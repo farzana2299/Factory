@@ -18,9 +18,10 @@ export class LoginComponent {
     psw: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]]
   })
   login() {
-    if (this.loginForm.valid) {
-      var uname = this.uname
+    var uname = this.uname
       var psw = this.psw
+    if (this.loginForm.valid) {
+      
       this.ds.login(uname, psw).subscribe((result: any) => {
 
         localStorage.setItem('currentUser', result.currentUser)

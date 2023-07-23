@@ -17,8 +17,11 @@ export class ProductComponent {
   {}
   ngOnInit():void
   {
-    this.ds.getProduct(this.pid).subscribe((result:any)=>{
+    this.ds.getProduct().subscribe((result:any)=>{
       this.proarray=result.message
+    })
+    this.ds.search.subscribe((value:any)=>{
+      this.searchString=value
     })
   }
   addPro()

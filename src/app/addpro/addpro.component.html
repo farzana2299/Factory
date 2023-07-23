@@ -24,7 +24,7 @@
 </div><br>
 <div>
     <label style="color: yellow;" for="d1"><b>DATE</b></label>
-    <input id="d1" formControlName="pdate" name="d2" class="form-control" type="string" placeholder="Enter Date">
+    <input id="d1" formControlName="pdate" name="d2" class="form-control" type="date" placeholder="Enter Date">
 </div>
 <div *ngIf="(this.addForm.get('pdate')?.errors)&&(this.addForm.get('pdate')?.touched)">
     <p class="text-danger">Must contains date only</p>
@@ -47,7 +47,7 @@
 <br>
 <button (click)="add()" type="submit" class="btn btn-success" style="position: relative;left: 500px;">ADD</button>
 <div class="text-container mb-2">
-    <a href="employee" style="position: relative;left: 950px; top: -50px;" type="button" class="btn btn-danger mt-3 ms-3 mb-3">Close</a>
+    <a href="product" style="position: relative;left: 950px; top: -50px;" type="button" class="btn btn-danger mt-3 ms-3 mb-3">Close</a>
 </div>
 </form>
 </div>

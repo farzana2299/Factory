@@ -11,13 +11,13 @@ import { ProductComponent } from './product/product.component';
 import { AddproComponent } from './addpro/addpro.component';
 import { EditproComponent } from './editpro/editpro.component';
 import { RawmaterialComponent } from './rawmaterial/rawmaterial.component';
-import { AddrawComponent } from './addraw/addraw.component';
 import { EditrawComponent } from './editraw/editraw.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchPipe } from './empPipe/search.pipe';
 import { FilterPipe } from './empPipe/filter.pipe';
+import { AddRawComponent } from './add-raw/add-raw.component';
 
 @NgModule({
   declarations: [
@@ -30,11 +30,11 @@ import { FilterPipe } from './empPipe/filter.pipe';
     AddproComponent,
     EditproComponent,
     RawmaterialComponent,
-    AddrawComponent,
     EditrawComponent,
     HomeComponent,
     SearchPipe,
-    FilterPipe
+    FilterPipe,
+    AddRawComponent
   ],
   imports: [
     BrowserModule,

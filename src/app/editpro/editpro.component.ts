@@ -18,7 +18,7 @@ export class EditproComponent {
       console.log(this.pid);
       
     })
-    this.ds.getProduct(this.pid).subscribe((result:any)=>{
+    this.ds.getProduct().subscribe((result:any)=>{
       this.pdata=result
       console.log(this.pdata);
       

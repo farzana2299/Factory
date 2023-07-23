@@ -6,6 +6,7 @@
     <input [(ngModel)]="searchTerm" (keyup)="search($event)" id="s1" name="search" type="text" style=" border-radius: 8px;height: 50px;" class="ms-5" placeholder="Search">
     <button style="border-radius: 8px;height: 50px;"><i class="fa-solid fa-magnifying-glass"></i></button>    
 </div>
+
 <div>
 <button (click)="filterPipe('')" class="btn btn-outline-warning btn-lg" style="position: relative;left: 400px; ">All</button>
 <button (click)="filterPipe('yes')" class="btn btn-outline-warning btn-lg" style="position: relative;left: 400px;">Current Staff</button>
@@ -28,18 +29,7 @@
       </tr>
     </thead>
     <tbody>
-      <!-- <tr>
-        <td>1</td>
-        <td>qqqq</td>
-        <td>wwww</td>
-        <td>www</td>
-        <td>www</td>
-        <td>222</td>
-        <td>aaa</td>
-        <td>22</td>
-        <td>sss</td>
-      </tr> -->
-      <tr *ngFor="let i of emparray  | filter :searchString:'estaff'">
+      <tr *ngFor="let i of emparray  | search :searchString:'ename'">
         <th scope="row">{{i.eid}}</th>
         <td>{{i.ename}}</td>
         <td>{{i.eposition}}</td>
@@ -49,8 +39,8 @@
         <td>{{i.ejoining}}</td>
         <td>{{i.estaff}}</td>
         <td>{{i.eleaving}}</td>
-        <td><button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="editEmployee()">Edit</button>
-            <button type="button" class="btn btn-sm btn-outline-danger" (click)="deleteEmployee()">Delete</button>
+        <td><button type="button" class="btn btn-sm btn-primary mr-2" (click)="editEmployee()">Edit</button>
+            <button type="button" class="btn btn-sm btn-danger" (click)="deleteEmployee()">Delete</button>
         </td>
       </tr>   
     </tbody>

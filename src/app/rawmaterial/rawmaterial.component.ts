@@ -15,8 +15,11 @@ export class RawmaterialComponent {
   {}
   ngOnInit():void
   {
-    this.ds.getProduct(this.rid).subscribe((result:any)=>{
+    this.ds.getRaw().subscribe((result:any)=>{
       this.rawarray=result.message
+    })
+    this.ds.search.subscribe((value:any)=>{
+      this.searchString=value
     })
   }
   addRaw()

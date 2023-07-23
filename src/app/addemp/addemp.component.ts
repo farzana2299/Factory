@@ -20,7 +20,7 @@ export class AddempComponent {
     ename: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],
     eposition: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],
     edept: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],
-    ephone: ['', [Validators.required, Validators.pattern('[0-9]+')]],
+    ephone: ['', [Validators.required,  Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
     esal: ['', [Validators.required, Validators.pattern('[0-9]+')]],
     ejoining: ['', [Validators.required]],
     estaff: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],

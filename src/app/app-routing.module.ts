@@ -7,10 +7,10 @@ import { EmployeeComponent } from './employee/employee.component';
 import { RawmaterialComponent } from './rawmaterial/rawmaterial.component';
 import { AddproComponent } from './addpro/addpro.component';
 import { AddempComponent } from './addemp/addemp.component';
-import { AddrawComponent } from './addraw/addraw.component';
 import { EditempComponent } from './editemp/editemp.component';
 import { EditproComponent } from './editpro/editpro.component';
 import { EditrawComponent } from './editraw/editraw.component';
+import { AddRawComponent } from './add-raw/add-raw.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -22,7 +22,7 @@ const routes: Routes = [
   {path:'editEmployee',component:EditempComponent},
   {path:'addProduct',component:AddproComponent},
   {path:'editProduct',component:EditproComponent},
-  {path:'addRaw',component:AddrawComponent},
+  {path:'addRaw',component:AddRawComponent},
   {path:'editRaw',component:EditrawComponent},
 
 

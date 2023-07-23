@@ -34,7 +34,7 @@
     <input id="p1" formControlName="ephone" name="p2" class="form-control" type="text" placeholder="Enter Phone Number">
 </div>
 <div *ngIf="(this.addForm.get('ephone')?.errors)&&(this.addForm.get('ephone')?.touched)">
-    <p class="text-danger">Must contains alphabets only</p>
+    <p class="text-danger">Must contains 10 numbers only</p>
 </div>
 <br>
 <div>
@@ -47,7 +47,7 @@
 <br>
 <div>
     <label for="j1"><b>JOINING DATE</b></label>
-    <input id="j1" formControlName="ejoining" name="j2" class="form-control" type="text" placeholder="Enter Joining Date">
+    <input id="j1" formControlName="ejoining" name="j2" class="form-control" type="date" placeholder="Enter Joining Date">
 </div>
 <div *ngIf="(this.addForm.get('ejoining')?.errors)&&(this.addForm.get('ejoining')?.touched)">
     <p class="text-danger">Must contains alphabets only</p>
@@ -63,7 +63,7 @@
 <br>
 <div>
     <label for="ld1"><b>LEAVING DATE</b></label>
-    <input id="ld1" formControlName="eleave" name="d2" class="form-control" type="text" placeholder="Enter Leaving Date">
+    <input id="ld1" formControlName="eleave" name="d2" class="form-control" type="date" placeholder="Enter Leaving Date">
 </div>
 <div *ngIf="(this.addForm.get('eleave')?.errors)&&(this.addForm.get('eleave')?.touched)">
     <p class="text-danger">Must contains alphabets only</p>

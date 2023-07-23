@@ -1,0 +1,55 @@
+<div class="ms-5 me-5 " style="background-color: darkgrey;">
+    <h2 class="text-center text-primary text-center" style="font-size: 45px;">Add New Raw-Material</h2>
+    <form action="" class="container" [formGroup]="addForm">
+        <div>
+            <label style="color: yellow;" for="rid"><b> RAW-MATERIAL ID</b></label>
+            <input id="rid" formControlName="rid" name="rid1" class="form-control" type="text" placeholder="Enter Id">
+        </div>
+        <div *ngIf="(this.addForm.get('rid')?.errors)&&(this.addForm.get('rid')?.touched)">
+            <p class="text-danger">Must contains alphabets and numbersonly</p>
+        </div><br>
+    <div>
+        <label style="color: yellow;" for="rname"><b>NAME</b></label>
+        <input id="rname" formControlName="rname" name="rname2" class="form-control" type="text" placeholder="Enter Name">
+    </div>
+    <div *ngIf="(this.addForm.get('rname')?.errors)&&(this.addForm.get('rname')?.touched)">
+        <p class="text-danger">Must contains alphabets only</p>
+    </div><br>
+    <div>
+        <label style="color: yellow;" for="rqty"><b>QUANTITY</b></label>
+        <input id="rqty" formControlName="rqty" name="rqty2" class="form-control" type="number" placeholder="Enter quantity">
+    </div>
+    <div *ngIf="(this.addForm.get('rqty')?.errors)&&(this.addForm.get('rqty')?.touched)">
+        <p class="text-danger">Must contains numbers only</p>
+    </div><br>
+    <div>
+        <label style="color: yellow;" for="rfrom"><b>FROM PLACE</b></label>
+        <input id="rfrom" formControlName="rfrom" name="rfrom" class="form-control" type="text" placeholder="Enter the import place">
+    </div>
+    <div *ngIf="(this.addForm.get('rfrom')?.errors)&&(this.addForm.get('rfrom')?.touched)">
+        <p class="text-danger">Must contains alphabets only</p>
+    </div><br>
+    <div>
+        <label style="color: yellow;" for="rdate"><b>FROM DATE</b></label>
+        <input id="rdate" formControlName="rdate" name="rdate2" class="form-control" type="date" placeholder="Enter the import date">
+    </div>
+    <div *ngIf="(this.addForm.get('rdate')?.errors)&&(this.addForm.get('rdate')?.touched)">
+        <p class="text-danger">Must contains date only</p>
+    </div>
+    <br>
+    <div>
+        <label style="color: yellow;" for="usage"><b>USAGE</b></label>
+        <input id="usage" formControlName="usage" name="usage2" class="form-control" type="text" placeholder="yes/no">
+    </div>
+    <div *ngIf="(this.addForm.get('esal')?.errors)&&(this.addForm.get('esal')?.touched)">
+        <p class="text-danger">Must contains smallcase only</p>
+    </div>
+    <br>
+    
+    <br>
+    <button (click)="add()" type="submit" class="btn btn-success" style="position: relative;left: 500px;">ADD</button>
+    <div class="text-container mb-2">
+        <a href="rawmaterial" style="position: relative;left: 950px; top: -50px;" type="button" class="btn btn-danger mt-3 ms-3 mb-3">Close</a>
+    </div>
+    </form>
+    </div>

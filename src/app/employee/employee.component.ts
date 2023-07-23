@@ -12,7 +12,7 @@ export class EmployeeComponent {
   emparray:any
   eid:any
   date:any;
-  searchTerm:any=[]
+  searchTerm:any=''
   
 constructor(private ds:DataService,private router:Router)
 {}
@@ -20,6 +20,9 @@ ngOnInit():void
 {
   this.ds.getEmployee().subscribe((result:any)=>{
     this.emparray=result.message
+  })
+  this.ds.search.subscribe((value:any)=>{
+    this.searchString=value
   })
 }
 addEmp()
@@ -40,7 +43,7 @@ deleteEmployee()
 search(event:any)
 {
   this.searchTerm=event.target.value
-  //seand data to behaviour subject
+  //send data to behaviour subject
   this.ds.search.next(this.searchTerm)
 }
  filterPipe(data:any)
