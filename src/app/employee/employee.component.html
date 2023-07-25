@@ -29,7 +29,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let i of emparray  | search :searchString:'ename'">
+      <tr *ngFor="let i of emparray  | search :searchString:'ename' | filter :searchString:'estaff'">
         <th scope="row">{{i.eid}}</th>
         <td>{{i.ename}}</td>
         <td>{{i.eposition}}</td>
@@ -40,7 +40,7 @@
         <td>{{i.estaff}}</td>
         <td>{{i.eleaving}}</td>
         <td><button type="button" class="btn btn-sm btn-primary mr-2" (click)="editEmployee()">Edit</button>
-            <button type="button" class="btn btn-sm btn-danger" (click)="deleteEmployee()">Delete</button>
+            <button type="button" class="btn btn-sm btn-danger" (click)="deleteEmployee(eid)">Delete</button>
         </td>
       </tr>   
     </tbody>

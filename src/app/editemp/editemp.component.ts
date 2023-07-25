@@ -25,10 +25,10 @@ export class EditempComponent {
       
     })
   }
-edit()
+edit(eid:any)
 {
-  this.ds.updateEmp(this.eid,this.edata).subscribe((result:any)=>{
-    alert('Employee Data Updated')
+  this.ds.updateEmp(eid,this.edata).subscribe((result:any)=>{
+    alert(result.message)
     this.rt.navigateByUrl('employee')
   })
 }

@@ -18,8 +18,8 @@ export class LoginComponent {
     psw: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]]
   })
   login() {
-    var uname = this.uname
-      var psw = this.psw
+    var uname = this.loginForm.value.uname
+      var psw = this.loginForm.value.psw
     if (this.loginForm.valid) {
       
       this.ds.login(uname, psw).subscribe((result: any) => {

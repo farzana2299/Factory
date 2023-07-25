@@ -24,10 +24,10 @@ export class EditrawComponent {
       
     })
   }
-edit()
+edit(rid:any)
 {
-  this.ds.updateRaw(this.rid,this.rdata).subscribe((result:any)=>{
-    alert('Raw-Material Data Updated')
+  this.ds.updateRaw(rid,this.rdata).subscribe((result:any)=>{
+    alert(result.message)
     this.rt.navigateByUrl('rawmaterial')
   })
 }

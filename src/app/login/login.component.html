@@ -1,39 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        login
-    </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 
-</head>
-<body>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                    class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form [formGroup]="loginForm">
 
- <div class="row" style="position:relative; left: 350px;top: 100px;right: 350px;">
-    <div class="col-lg-12 col-sm-12 bg-img">
-        <form [formGroup]="loginForm" id="d" class="ms-5 mt-5 p-5 w-50">
-            <h1 class="text-center text-danger"><b> SIGN IN</b></h1>
-            <div class="p-2 mt-2">
-                <input formControlName="uname"  class="form-control" type="text" name="uname1" id="u1" placeholder="Username">
-            </div>
-            <div *ngIf="loginForm.get('uname')?.errors&&loginForm.get('uname')?.touched">
-                <p class="text-danger">Includes alphabets only</p>
+                 
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="uname">USERNAME</label>
+                        <input formControlName="uname" type="text" id="uname" name="u1"
+                            class="form-control form-control-lg" placeholder="username" />
+                    </div>
+                    <div *ngIf="loginForm.get('uname')?.errors&&loginForm.get('uname')?.touched">
+                        <p class="text-danger">Includes alphabets only</p>
 
+                    </div>
+                  
+                    <div class="form-outline mb-3">
+                        <label class="form-label" for="psw">PASSWORD</label>
+                        <input formControlName="psw" type="password" id="psw" name="psw1" class="form-control form-control-lg"
+                            placeholder=" password" />
+                    </div>
+                    <div *ngIf="loginForm.get('psw')?.errors&&loginForm.get('psw')?.touched">
+                        <p class="text-danger">Includes alphabets and numbers only</p>
+
+                    </div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button (click)="login()" type="button" class="btn btn-primary btn-lg"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                    </div>
+
+                </form>
             </div>
-            
-            <div>
-                <input formControlName="psw"  type="password" class="form-control" name="pass" id="p1" placeholder=" Password">
-            </div>
-            
-            <div class="p-2 mt-2 text-center">
-                <button (click)="login()" class="btn btn-secondary">login</button>
-            </div>
-        </form>
+        </div>
     </div>
- </div>   
-</body>
-</html>
-
+</section>

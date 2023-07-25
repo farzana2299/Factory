@@ -30,11 +30,11 @@ export class RawmaterialComponent {
   {
     this.router.navigate(['/editRaw']);
   }
-  deleteRaw()
+  deleteRaw(rid:any)
   {
-    this.ds.deleteRaw(this.rid).subscribe((result:any)=>{
-      alert('Raw-Material Deleted')
-      this.router.navigate(['/product']);
+    this.ds.deleteRaw(rid).subscribe((result:any)=>{
+      alert(result.message)
+      this.router.navigate(['/rawmaterial']);
     })
   }
   search(event:any)

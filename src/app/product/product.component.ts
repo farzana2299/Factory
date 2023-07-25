@@ -32,10 +32,10 @@ export class ProductComponent {
   {
     this.router.navigate(['/editEmployee']);
   }
-  deletePro()
+  deletePro(pid:any)
   {
-    this.ds.deleteProduct(this.pid).subscribe((result:any)=>{
-      alert('Product Deleted')
+    this.ds.deleteProduct(pid).subscribe((result:any)=>{
+      alert(result.message)
       this.router.navigate(['/product']);
     })
   }

@@ -33,10 +33,10 @@ editEmployee()
 {
   this.router.navigate(['/editEmployee']);
 }
-deleteEmployee()
+deleteEmployee(eid:any)
 {
-  this.ds.deleteEmployee(this.eid).subscribe((result:any)=>{
-    alert('Employee Deleted')
+  this.ds.deleteEmployee(eid).subscribe((result:any)=>{
+    alert(result.message)
     this.router.navigate(['/employee']);
   })
 }

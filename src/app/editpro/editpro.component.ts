@@ -24,11 +24,11 @@ export class EditproComponent {
       
     })
   }
-edit()
+edit(pid:any)
 {
-  this.ds.updateEmp(this.pid,this.pdata).subscribe((result:any)=>{
-    alert('Employee Data Updated')
-    this.rt.navigateByUrl('employee')
+  this.ds.updateEmp(pid,this.pdata).subscribe((result:any)=>{
+    alert(result.message)
+    this.rt.navigateByUrl('product')
   })
 }
 }
