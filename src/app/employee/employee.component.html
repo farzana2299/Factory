@@ -29,7 +29,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let i of emparray  | search :searchString:'ename' | filter :searchString:'estaff'">
+      <tr *ngFor="let i of emparray | filter :searchTerm:'estaff' | search :searchString:'ename' ">
         <th scope="row">{{i.eid}}</th>
         <td>{{i.ename}}</td>
         <td>{{i.eposition}}</td>

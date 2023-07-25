@@ -12,7 +12,7 @@ export class EmployeeComponent {
   emparray:any
   eid:any
   date:any;
-  searchTerm:any=''
+  searchTerm=''
   
 constructor(private ds:DataService,private router:Router)
 {}
@@ -37,6 +37,8 @@ deleteEmployee(eid:any)
 {
   this.ds.deleteEmployee(eid).subscribe((result:any)=>{
     alert(result.message)
+    console.log(eid);
+    
     this.router.navigate(['/employee']);
   })
 }
@@ -48,7 +50,7 @@ search(event:any)
 }
  filterPipe(data:any)
  {
-  this.searchString=data
+  this.searchTerm=data
  }
 }
 

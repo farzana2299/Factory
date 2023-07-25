@@ -12,7 +12,7 @@ export class ProductComponent {
   proarray:any
   pid:any
   date:any;
-  searchTerm:any=[]
+  searchTerm=""
   constructor(private ds:DataService,private router:Router)
   {}
   ngOnInit():void
@@ -41,12 +41,12 @@ export class ProductComponent {
   }
   search(event:any)
   {
-    this.searchTerm=event.target.value
+    this.searchString=event.target.value
     //seand data to behaviour subject
-    this.ds.search.next(this.searchTerm)
+    this.ds.search.next(this.searchString)
   }
    filterPipe(data:any)
    {
-    this.searchString=data
+    this.searchTerm=data
    }
 }

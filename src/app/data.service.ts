@@ -42,8 +42,10 @@ export class DataService {
 //delete employee
 deleteEmployee(eid:any)
 {
-  return this.http.delete('http://localhost:3000/employee/'+eid)
+  return this.http.delete('http://localhost:3000/deleteEmployee/'+eid)
 }
+
+
 //add product
 addProduct(pid:any,pname:any,quantity:any,pdate:any,pexport:any,pplace:any)
   {
@@ -65,8 +67,10 @@ getProduct()
 //delete product
 deleteProduct(pid:any)
 {
-  return this.http.delete('http://localhost:3000/product/'+pid)
+  return this.http.delete('http://localhost:3000/deleteProduct/'+pid)
 }
+
+
 //add raw
 addRaw(rid:any,rname:any,rqty:any,rfrom:any,rdate:any,usage:any)
   {
@@ -88,6 +92,6 @@ return this.http.put('http://localhost:3000/rawmaterial/'+rid,proObject)
 //delete raw
 deleteRaw(rid:any)
 {
-return this.http.delete('http://localhost:3000/rawmaterial/'+rid)
+return this.http.delete('http://localhost:3000/deleteRaw/'+rid)
 }
 }
