@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div style="border:3px; background-color: lightblue; height: 500px;width: 500px;position: relative;left: 420px;
+         top: 100px; border-radius: 5px; border-color: blue;" class="ps-5 pt-5">
+        <h1 class="text-center">PRODUCT DETAILS</h1>
+            <h3 style="color: blue;"><b>NAME:</b>{{pdata.pname}}</h3>
+            <h4 style="color: blue;"><b>ID:</b>{{pdata.pid}}</h4>
+            <h4 style="color: blue;"><b>QUANTITY:</b>{{pdata.quantity}}</h4>
+            <h4 style="color: blue;"><b>DATE:</b>{{pdata.pdate}}</h4>
+            <h4 style="color: blue;"><b>EXPORT OR NOT:</b>{{pdata.pexport}}</h4>
+            <h4 style="color: blue;"><b>PLACE:</b>{{pdata.pplace}}</h4>
+            <div class="d-flex" style="position: relative;left: 75px; top: 50px;">
+                <button class="btn btn-primary btn-lg" type="button">
+                    <a style="text-decoration: none;color: white;" href="editProduct/{{pdata.pid}}">
+                    EDIT
+                    </a>
+                </button>
+                <button (click)="deletepro()" class="btn btn-danger btn-lg" type="button">
+                    <a style="text-decoration: none;color: white;">
+                    DELETE
+                    </a>
+                </button>
+                <a href="product"  type="button" class="btn btn-warning btn-lg">Back</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -18,6 +18,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchPipe } from './empPipe/search.pipe';
 import { FilterPipe } from './empPipe/filter.pipe';
 import { AddRawComponent } from './add-raw/add-raw.component';
+import { ViewempComponent } from './viewemp/viewemp.component';
+import { ViewproComponent } from './viewpro/viewpro.component';
+import { ViewrawComponent } from './viewraw/viewraw.component';
+import { DeleteempComponent } from './deleteemp/deleteemp.component';
+import { DeleteproComponent } from './deletepro/deletepro.component';
+import { DeleterawComponent } from './deleteraw/deleteraw.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,13 @@ import { AddRawComponent } from './add-raw/add-raw.component';
     HomeComponent,
     SearchPipe,
     FilterPipe,
-    AddRawComponent
+    AddRawComponent,
+    ViewempComponent,
+    ViewproComponent,
+    ViewrawComponent,
+    DeleteempComponent,
+    DeleteproComponent,
+    DeleterawComponent
   ],
   imports: [
     BrowserModule,

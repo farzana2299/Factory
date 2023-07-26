@@ -10,7 +10,7 @@ export class RawmaterialComponent {
   searchString=""
   rawarray:any
   rid:any
-  searchTerm:any=[]
+  searchTerm=''
   constructor(private ds:DataService,private router:Router)
   {}
   ngOnInit():void
@@ -26,17 +26,7 @@ export class RawmaterialComponent {
   {
     this.router.navigate(['/addRaw']);
   }
-  editRaw()
-  {
-    this.router.navigate(['/editRaw']);
-  }
-  deleteRaw(rid:any)
-  {
-    this.ds.deleteRaw(rid).subscribe((result:any)=>{
-      alert(result.message)
-      this.router.navigate(['/rawmaterial']);
-    })
-  }
+  
   search(event:any)
   {
     this.searchTerm=event.target.value
@@ -45,6 +35,6 @@ export class RawmaterialComponent {
   }
    filterPipe(data:any)
    {
-    this.searchString=data
+    this.searchTerm=data
    }
 }

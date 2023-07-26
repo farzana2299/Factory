@@ -21,10 +21,12 @@ export class AddempComponent {
     eposition: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],
     edept: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],
     ephone: ['', [Validators.required,  Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
+    email:['',[Validators.required]],
+    ephoto:['', [Validators.required]],
     esal: ['', [Validators.required, Validators.pattern('[0-9]+')]],
     ejoining: ['', [Validators.required]],
     estaff: ['', [Validators.required, Validators.pattern('[a-zA-z]+')]],
-    eleave: ['',]
+    eleaving: ['']
   })
   add() {
     var eid = this.addForm.value.eid
@@ -32,13 +34,15 @@ export class AddempComponent {
     var eposition = this.addForm.value.eposition
     var edept = this.addForm.value.edept
     var ephone = this.addForm.value.ephone
+    var email=this.addForm.value.email
+    var ephoto=this.addForm.value.ephoto                      
     var esal = this.addForm.value.esal
     var ejoining = this.addForm.value.ejoining
     var estaff = this.addForm.value.estaff
-    var eleave = this.addForm.value.eleave
+    var eleaving = this.addForm.value.eleaving
     if(this.addForm.valid)
     {
-      this.ds.addEmployee(eid,ename,eposition,edept,ephone,esal,ejoining,estaff,eleave).subscribe((result: any) => {
+      this.ds.addEmployee(eid,ename,eposition,edept,ephone,email,ephoto,esal,ejoining,estaff,eleaving).subscribe((result: any) => {
         alert(result.message)
         this.rt.navigateByUrl("employee")
       },
@@ -50,7 +54,7 @@ export class AddempComponent {
     }
     else{
     
-        alert("Please Check again")
+        alert("Form is not valid")
     }
     
   }

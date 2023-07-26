@@ -17,24 +17,16 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">NAME</th>
-            <th scope="col">QUANTITY</th>
-            <th scope="col">DATE</th>
             <th scope="col">EXPORT</th>
-            <th scope="col">PLACE</th>
-            <th scope="col">button</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let i of proarray  | search :searchString:'pname' | filter :searchTerm:'pexport'">
             <th scope="row">{{i.pid}}</th>
             <td>{{i.pname}}</td>
-            <td>{{i.quantity}}</td>
-            <td>{{i.pdate}}</td>
             <td>{{i.pexport}}</td>
-            <td>{{i.pplace}}</td>
-            <td><button type="button" class="btn btn-sm btn-outline-primary mr-2" (click)="editPro()">Edit</button>
-                <button type="button" class="btn btn-sm btn-outline-danger" (click)="deletePro(pid)">Delete</button>
-            </td>
+            <td><a type="button" class="btn btn-sm btn-primary mr-2" href="viewpro/{{i.pid}}"><i class="fa-regular fa-eye"></i></a></td>
           </tr>   
         </tbody>
       </table>

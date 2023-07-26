@@ -1,10 +1,6 @@
 <div class="ms-5 me-5 " style="background-color: darkgrey;">
 <h2 class="text-center text-primary" style="font-size: 45px;">Edit Employee</h2>
-<form action="" (ngSubmit)="edit(eid)" class="container" >
-    <div>
-        <label style="color: yellow;" for="id"><b> EMPLOYEE ID</b></label>
-        <input [(ngModel)]="edata.eid" id="id" name="eid" class="form-control" type="text" placeholder="Enter Employee Id">
-    </div><br>
+<form action="" class="container" (ngSubmit)="edit()">
 <div>
     <label style="color: yellow;" for="name"><b>NAME</b></label>
     <input [(ngModel)]="edata.ename" id="name" name="ename" class="form-control" type="text" placeholder="Enter Name">
@@ -22,6 +18,14 @@
     <input [(ngModel)]="edata.ephone" id="p1" name="p2" class="form-control" type="text" placeholder="Enter Phone Number">
 </div><br>
 <div>
+    <label style="color: yellow;" for="p1"><b>EMAIL</b></label>
+    <input [(ngModel)]="edata.email" id="p1" name="p2" class="form-control" type="email" placeholder="Enter email">
+</div><br>
+<div>
+    <label style="color: yellow;" for="p1"><b>PHOTO</b></label>
+    <input [(ngModel)]="edata.ephoto" id="p1" name="p2" class="form-control" type="text" placeholder="Photo URL">
+</div><br>
+<div>
     <label style="color: yellow;" for="s1"><b>SALARY PER MONTH</b></label>
     <input [(ngModel)]="edata.esal" id="s1" name="s2" class="form-control" type="number" placeholder="Enter Salary per month">
 </div><br>
@@ -35,7 +39,7 @@
 </div><br>
 <div>
     <label style="color: yellow;" for="ld1"><b>LEAVING DATE</b></label>
-    <input [(ngModel)]="edata.eleave" id="ld1" name="d2" class="form-control" type="date" placeholder="Enter Leaving Date">
+    <input [(ngModel)]="edata.eleaving" id="ld1" name="d2" class="form-control" type="date" placeholder="Enter Leaving Date">
 </div><br>
 <button type="submit" class="btn btn-success" style="position: relative;left: 500px;">SAVE</button>
 <div class="text-container mb-2">

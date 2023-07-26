@@ -21,7 +21,7 @@ export class AddproComponent {
     quantity:['',[Validators.required,Validators.pattern('[0-9]+')]],
     pdate:['',[Validators.required]],
     pexport:['',[Validators.pattern('[a-z]+')]],
-    pplace:['',[Validators.required,Validators.pattern('[a-zA-z]+')]],
+    pplace:['',[Validators.pattern('[a-zA-z]+')]],
   })
     add()
     {
@@ -44,7 +44,7 @@ if(this.addForm.valid)
   )
 }
 else{
-  alert("Please check again")
+  alert("Form Not Valid")
 }
 }
     

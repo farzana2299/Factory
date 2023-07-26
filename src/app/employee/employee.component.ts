@@ -29,18 +29,9 @@ addEmp()
 {
   this.router.navigate(['/addEmployee']);
 }
-editEmployee()
+viewEmployee()
 {
-  this.router.navigate(['/editEmployee']);
-}
-deleteEmployee(eid:any)
-{
-  this.ds.deleteEmployee(eid).subscribe((result:any)=>{
-    alert(result.message)
-    console.log(eid);
-    
-    this.router.navigate(['/employee']);
-  })
+  this.router.navigate(['/viewemp']);
 }
 search(event:any)
 {

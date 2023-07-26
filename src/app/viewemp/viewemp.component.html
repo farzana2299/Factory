@@ -1,0 +1,37 @@
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="{{edata.ephoto}}" alt="" /></div>
+            <div class="col-md-6">
+               
+                <h1 class="display-5 fw-bolder">{{edata.ename}}</h1>
+                <div class="fs-5 mb-5">
+                    <span class="text-decoration"><b>EMP ID:-</b> {{edata.eid}}</span>
+                    
+                </div>
+                <p class="lead"><b>POSITION:-</b>{{edata.eposition}}</p>
+                <p class="lead"><b>DEPARTMENT:-</b>{{edata.edept}}</p>
+                <p class="lead"><b>PHONE NUMBER:-</b>{{edata.ephone}}</p>
+                <p class="lead"><b>EMAIL:-</b>{{edata.email}}</p>
+                <p class="lead"><b>SALARY PER MONTH:-</b>{{edata.esal}}</p>
+                <p class="lead"><b>JOINING DATE:-</b>{{edata.ejoining}}</p>
+                <p class="lead"><b>STAFF OR NOT:-</b>{{edata.estaff}}</p>
+                <p class="lead"><b>RESIGNED DATE:-</b>{{edata.eleaving}}</p>
+                <div class="d-flex">
+                    <button class="btn btn-primary btn-lg" type="button">
+                        <a style="text-decoration: none;color: white;" href="editEmployee/{{edata.eid}}">
+                        EDIT
+                        </a>
+                    </button>
+                    <button (click)="deleteemp()" class="btn btn-danger btn-lg" type="button">
+                        <a style="text-decoration: none;color: white;">
+                        DELETE
+                        </a>
+                    </button>
+                    <a href="employee"  type="button" class="btn btn-warning btn-lg">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

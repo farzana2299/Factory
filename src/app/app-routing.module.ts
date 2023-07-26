@@ -11,6 +11,12 @@ import { EditempComponent } from './editemp/editemp.component';
 import { EditproComponent } from './editpro/editpro.component';
 import { EditrawComponent } from './editraw/editraw.component';
 import { AddRawComponent } from './add-raw/add-raw.component';
+import { ViewempComponent } from './viewemp/viewemp.component';
+import { ViewproComponent } from './viewpro/viewpro.component';
+import { ViewrawComponent } from './viewraw/viewraw.component';
+import { DeleteempComponent } from './deleteemp/deleteemp.component';
+import { DeleteproComponent } from './deletepro/deletepro.component';
+import { DeleterawComponent } from './deleteraw/deleteraw.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
@@ -19,12 +25,17 @@ const routes: Routes = [
   {path:'rawmaterial',component:RawmaterialComponent},
   {path:'employee',component:EmployeeComponent},
   {path:'addEmployee',component:AddempComponent},
-  {path:'editEmployee',component:EditempComponent},
+  {path:'editEmployee/:id',component:EditempComponent},
   {path:'addProduct',component:AddproComponent},
-  {path:'editProduct',component:EditproComponent},
+  {path:'editProduct/:id',component:EditproComponent},
   {path:'addRaw',component:AddRawComponent},
-  {path:'editRaw',component:EditrawComponent},
-
+  {path:'editRaw/:id',component:EditrawComponent},
+  {path:'viewemp/:id',component:ViewempComponent},
+  {path:'viewpro/:id',component:ViewproComponent},
+  {path:'viewraw/:id',component:ViewrawComponent},
+  {path:'deleteemp/:id',component:DeleteempComponent},
+  {path:'deletepro/:id',component:DeleteproComponent},
+  {path:'deleteraw/:id',component:DeleterawComponent},
 
   
 ];

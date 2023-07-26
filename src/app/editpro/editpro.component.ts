@@ -15,18 +15,18 @@ export class EditproComponent {
   ngOnInit():void{
     this.ar.params.subscribe((data:any)=>{
       this.pid=data.id
-      console.log(this.pid);
+      // console.log(this.pid);
       
     })
-    this.ds.getProduct().subscribe((result:any)=>{
-      this.pdata=result
+    this.ds.getPro(this.pid).subscribe((result:any)=>{
+      this.pdata=result.message
       console.log(this.pdata);
       
     })
   }
-edit(pid:any)
+edit()
 {
-  this.ds.updateEmp(pid,this.pdata).subscribe((result:any)=>{
+  this.ds.editPro(this.pid,this.pdata).subscribe((result:any)=>{
     alert(result.message)
     this.rt.navigateByUrl('product')
   })

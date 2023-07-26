@@ -28,17 +28,7 @@ export class ProductComponent {
   {
     this.router.navigate(['/addProduct']);
   }
-  editPro()
-  {
-    this.router.navigate(['/editEmployee']);
-  }
-  deletePro(pid:any)
-  {
-    this.ds.deleteProduct(pid).subscribe((result:any)=>{
-      alert(result.message)
-      this.router.navigate(['/product']);
-    })
-  }
+  
   search(event:any)
   {
     this.searchString=event.target.value

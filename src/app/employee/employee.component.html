@@ -8,9 +8,9 @@
 </div>
 
 <div>
-<button (click)="filterPipe('')" class="btn btn-outline-warning btn-lg" style="position: relative;left: 400px; ">All</button>
-<button (click)="filterPipe('yes')" class="btn btn-outline-warning btn-lg" style="position: relative;left: 400px;">Current Staff</button>
-<button (click)="filterPipe('no')" class="btn btn-outline-warning btn-lg" style="position: relative;left: 400px;">Resigned Staff</button>
+<button (click)="filterPipe('')" class="btn btn-warning btn-lg" style="position: relative;left: 400px; ">All</button>
+<button (click)="filterPipe('yes')" class="btn btn-warning btn-lg" style="position: relative;left: 400px;">Current Staff</button>
+<button (click)="filterPipe('no')" class="btn btn-warning btn-lg" style="position: relative;left: 400px;">Resigned Staff</button>
 </div>
 <hr>
 <table class="table table-primary table-striped container">
@@ -19,12 +19,7 @@
         <th scope="col">ID</th>
         <th scope="col">NAME</th>
         <th scope="col">POSITION</th>
-        <th scope="col">DEPARTMENT</th>
-        <th scope="col">PHONE</th>
-        <th scope="col">SALARY</th>
-        <th scope="col">JOINING DATE</th>
         <th scope="col">STAFF</th>
-        <th scope="col">LEAVING DATE</th>
         <th scope="col">button</th>
       </tr>
     </thead>
@@ -33,14 +28,8 @@
         <th scope="row">{{i.eid}}</th>
         <td>{{i.ename}}</td>
         <td>{{i.eposition}}</td>
-        <td>{{i.edept}}</td>
-        <td>{{i.ephone}}</td>
-        <td>{{i.esal}}</td>
-        <td>{{i.ejoining}}</td>
         <td>{{i.estaff}}</td>
-        <td>{{i.eleaving}}</td>
-        <td><button type="button" class="btn btn-sm btn-primary mr-2" (click)="editEmployee()">Edit</button>
-            <button type="button" class="btn btn-sm btn-danger" (click)="deleteEmployee(eid)">Delete</button>
+        <td><a type="button" class="btn btn-sm btn-primary mr-2" href="viewemp/{{i.eid}}" ><i class="fa-regular fa-eye"></i></a>
         </td>
       </tr>   
     </tbody>
@@ -50,3 +39,4 @@
 </div>
 
 </div>
+

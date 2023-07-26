@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div style="border:3px; background-color: lightblue; height: 500px;width: 700px;position: relative;left: 350px;
+         top: 100px; border-radius: 5px; border-color: blue;" class="ps-5 pt-5">
+        <h1 class="text-center">RAW-MATERIAL DETAILS</h1>
+            <h3 style="position: relative;left: 50px;"><b>NAME:</b><span style="color: darkblue;">{{rdata.rname}}</span> </h3>
+            <h4 style="position: relative;left: 50px;"><b>ID:</b><span style="color: darkblue;">{{rdata.rid}}</span></h4>
+            <h4 style="position: relative;left: 50px;"><b>QUANTITY:</b><span style="color: darkblue;">{{rdata.rqty}}</span></h4>
+            <h4 style="position: relative;left: 50px;"><b>PLACE:</b><span style="color: darkblue;">{{rdata.rfrom}}</span></h4>
+            <h4 style="position: relative;left: 50px;"><b>DATE:</b><span style="color: darkblue;">{{rdata.rdate}}</span></h4>
+            <h4 style="position: relative;left: 50px;"><b>USAGE:</b><span style="color: darkblue;">{{rdata.usage}}</span></h4>
+            <div class="d-flex" style="position: relative;left: 75px; top: 50px;">
+                <button class="btn btn-primary btn-lg" type="button">
+                    <a style="text-decoration: none;color: white;" href="editRaw/{{rdata.rid}}">
+                    EDIT
+                    </a>
+                </button>
+                <button (click)="deleteraw()" class="btn btn-danger btn-lg" type="button">
+                    <a style="text-decoration: none;color: white;">
+                    DELETE
+                    </a>
+                </button>
+                <a href="rawmaterial"  type="button" class="btn btn-warning btn-lg">Back</a>
+            </div>
+        </div>
+    </div>
+</div>

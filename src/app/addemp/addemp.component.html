@@ -37,6 +37,22 @@
     <p class="text-danger">Must contains 10 numbers only</p>
 </div>
 <br>
+
+<div>
+    <label style="color: yellow;" for="email1"><b>EMAIL</b></label>
+    <input id="email1" formControlName="email" name="email2" class="form-control" type="email" placeholder="Enter email">
+</div>
+<div *ngIf="(this.addForm.get('email')?.errors)&&(this.addForm.get('email')?.touched)">
+    <p class="text-danger">Email only</p>
+</div><br>
+<div>
+    <label style="color: yellow;" for="ephoto1"><b>PHOTO</b></label>
+    <input id="ephoto1" formControlName="ephoto" name="ephoto2" class="form-control" type="text" placeholder="Photo">
+</div>
+<div *ngIf="(this.addForm.get('ephoto')?.errors)&&(this.addForm.get('ephoto')?.touched)">
+    <p class="text-danger">Photo url only</p>
+</div><br>
+
 <div>
     <label style="color: yellow;" for="s1"><b>SALARY PER MONTH</b></label>
     <input id="s1" formControlName="esal" name="s2" class="form-control" type="number" placeholder="Enter Salary per month">
@@ -63,9 +79,9 @@
 <br>
 <div>
     <label for="ld1"><b>LEAVING DATE</b></label>
-    <input id="ld1" formControlName="eleave" name="d2" class="form-control" type="date" placeholder="Enter Leaving Date">
+    <input id="ld1" formControlName="eleaving" name="d2" class="form-control" type="date" placeholder="Enter Leaving Date">
 </div>
-<div *ngIf="(this.addForm.get('eleave')?.errors)&&(this.addForm.get('eleave')?.touched)">
+<div *ngIf="(this.addForm.get('eleaving')?.errors)&&(this.addForm.get('eleaving')?.touched)">
     <p class="text-danger">Must contains alphabets only</p>
 </div>
 <br>

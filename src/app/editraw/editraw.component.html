@@ -1,29 +1,29 @@
 <div  class="ms-5 me-5 " style="background-color: darkgrey;">
 <h2 class="text-center text-primary" style="font-size: 45px;">Edit Raw-Material</h2>
-<form action="" (ngSubmit)="edit(rid)" class="container" >
+<form action="" (ngSubmit)="edit()" class="container" >
     <div>
         <label style="color: yellow;" for="pid"><b>ID</b></label>
-        <input [(ngModel)]="rdata.pid" id="pid" name="id" class="form-control" type="text" placeholder="Enter  Id">
+        <input [(ngModel)]="rdata.rid" id="pid" name="id" class="form-control" type="text" placeholder="Enter  Id">
     </div><br>
 <div>
     <label style="color: yellow;" for="pname"><b>NAME</b></label>
-    <input [(ngModel)]="rdata.pname" id="pname" name="name" class="form-control" type="text" placeholder="Enter  Name">
+    <input [(ngModel)]="rdata.rname" id="pname" name="name" class="form-control" type="text" placeholder="Enter  Name">
 </div><br>
 <div>
     <label style="color: yellow;" for="qty"><b>QUANTITY</b></label>
-    <input [(ngModel)]="rdata.quantity" id="qty" name="quantity" class="form-control" type="text" placeholder="Enter Quantity">
+    <input [(ngModel)]="rdata.rqty" id="qty" name="quantity" class="form-control" type="number" placeholder="Enter Quantity">
 </div><br>
 <div>
     <label style="color: yellow;" for="d1"><b>PLACE</b></label>
-    <input [(ngModel)]="rdata.pdate" id="d1" name="d2" class="form-control" type="text" placeholder="Enter the place where product exports">
+    <input [(ngModel)]="rdata.rfrom" id="d1" name="d2" class="form-control" type="text" placeholder="Enter the place where product exports">
 </div><br>
 <div>
     <label style="color: yellow;" for="e1"><b>DATE</b></label>
-    <input [(ngModel)]="rdata.export" id="e1" name="e2" class="form-control" type="date" placeholder="Enter Date">
+    <input [(ngModel)]="rdata.rdate" id="e1" name="e2" class="form-control" type="date" placeholder="Enter Date">
 </div><br>
 <div>
     <label style="color: yellow;" for="e1"><b>USAGE</b></label>
-    <input [(ngModel)]="rdata.pplace" id="e1" name="e2" class="form-control" type="text" placeholder="Yes/No">
+    <input [(ngModel)]="rdata.usage" id="e1" name="e2" class="form-control" type="text" placeholder="Yes/No">
 </div><br>
 <button type="submit" class="btn btn-success" style="position: relative;left: 500px;">SAVE</button>
 <div class="text-container mb-2">

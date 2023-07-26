@@ -18,15 +18,17 @@ export class EditrawComponent {
       
       
     })
-    this.ds.getRaw().subscribe((result:any)=>{
-      this.rdata=result
+    this.ds.getsRaw(this.rid).subscribe((result:any)=>{
+      this.rdata=result.message
+      console.log(this.rdata);
+      
       
       
     })
   }
-edit(rid:any)
+edit()
 {
-  this.ds.updateRaw(rid,this.rdata).subscribe((result:any)=>{
+  this.ds.editRaw(this.rid,this.rdata).subscribe((result:any)=>{
     alert(result.message)
     this.rt.navigateByUrl('rawmaterial')
   })

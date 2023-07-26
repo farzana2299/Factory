@@ -21,28 +21,33 @@ export class DataService {
   }
   
   //add employee
-  addEmployee(eid:any,ename:any,eposition:any,edept:any,ephone:any,esal:any,ejoining:any,estaff:any,eleave:any)
+  addEmployee(eid:any,ename:any,eposition:any,edept:any,ephone:any,email:any,ephoto:any,esal:any,ejoining:any,estaff:any,eleaving:any)
   {
     const body={
-      eid,ename,eposition,edept,ephone,esal,ejoining,estaff,eleave
+      eid,ename,eposition,edept,ephone,email,ephoto,esal,ejoining,estaff,eleaving
     }
     return this.http.post('http://localhost:3000/addEmployee',body)
   }
   
-  //single employee data //api to get emp array
+  //api to get emp array
   getEmployee()
   {
     return this.http.get('http://localhost:3000/employee')
   }
+  //get single data
+  getEmp(eid:any)
+  {
+    return this.http.get('http://localhost:3000/viewemp/'+eid)
+  }
   //update employee
-  updateEmp(eid:any,empObject:any)
+  editEmp(eid:any,empObject:any)
 {
-  return this.http.put('http://localhost:3000/employee/'+eid,empObject)
+  return this.http.post('http://localhost:3000/editEmployee/'+eid,empObject)
 }
 //delete employee
-deleteEmployee(eid:any)
+deleteemp(eid:any)
 {
-  return this.http.delete('http://localhost:3000/deleteEmployee/'+eid)
+  return this.http.delete('http://localhost:3000/viewemp/'+eid)
 }
 
 
@@ -59,15 +64,19 @@ getProduct()
   {
     return this.http.get('http://localhost:3000/product')
   }
+  getPro(pid:any)
+  {
+    return this.http.get('http://localhost:3000/viewpro/'+pid)
+  }
   //update product
-  updateProduct(pid:any,proObject:any)
+  editPro(pid:any,proObject:any)
 {
-  return this.http.put('http://localhost:3000/product/'+pid,proObject)
+  return this.http.post('http://localhost:3000/editProduct/'+pid,proObject)
 }
 //delete product
-deleteProduct(pid:any)
+deletepro(pid:any)
 {
-  return this.http.delete('http://localhost:3000/deleteProduct/'+pid)
+  return this.http.delete('http://localhost:3000/viewpro/'+pid)
 }
 
 
@@ -79,19 +88,23 @@ addRaw(rid:any,rname:any,rqty:any,rfrom:any,rdate:any,usage:any)
     }
     return this.http.post('http://localhost:3000/addRaw',body)
   }
-  //single raw data
+  //data in table
 getRaw()
 {
   return this.http.get('http://localhost:3000/rawmaterial')
 }
-//update raw
-updateRaw(rid:any,proObject:any)
+getsRaw(rid:any)
 {
-return this.http.put('http://localhost:3000/rawmaterial/'+rid,proObject)
+  return this.http.get('http://localhost:3000/viewraw/'+rid)
+}
+//update raw
+editRaw(rid:any,proObject:any)
+{
+return this.http.post('http://localhost:3000/editRaw/'+rid,proObject)
 }
 //delete raw
-deleteRaw(rid:any)
+deleteraw(rid:any)
 {
-return this.http.delete('http://localhost:3000/deleteRaw/'+rid)
+return this.http.delete('http://localhost:3000/viewraw/'+rid)
 }
 }
